@@ -83,11 +83,26 @@ var entryPlugins = function ( output ) {
 /*
  	webpack插件
  * */
+//dev
 webpackConfig.plugins = [
 	//提取公共js
 	new CommonsChunkPlugin('common.js'),
 	//抽离css(link引入)
 	new ExtractTextPlugin('../css/[name].css'),
+	/*new webpack.ProvidePlugin({
+        $: "jquery",
+        jQuery: "jquery",
+        jquery: "jquery",
+        "window.jQuery": "jquery"
+    })*/
+];
+
+//release
+webpackConfig.r_plugins = [
+	//提取公共js
+	new CommonsChunkPlugin('common.js'),
+	//抽离css(link引入)
+	new ExtractTextPlugin('../css/[name].[chunkhash:8].css'),
 	//压缩js
 	new webpack.optimize.UglifyJsPlugin({
         compress:{
@@ -100,8 +115,7 @@ webpackConfig.plugins = [
         jquery: "jquery",
         "window.jQuery": "jquery"
     })*/
-]
-
+];
 
 //dev 清除生成文件
 gulp.task('dev-clean',function() {
@@ -142,7 +156,7 @@ gulp.task('less',function() {
 });
 //css压缩
 gulp.task('cssmin', function () {
-    gulp.src( config.dev.output +'css/*.css')
+    gulp.src( config.release.output +'css/*.css')
         .pipe(cssmin({
             advanced: false,//类型：Boolean 默认：true [是否开启高级优化（合并选择器等）]
             compatibility: 'ie7',//保留ie7及以下兼容写法 类型：String 默认：''or'*' [启用兼容模式； 'ie7'：IE7兼容模式，'ie8'：IE8兼容模式，'*'：IE9+兼容模式]
@@ -202,7 +216,7 @@ gulp.task('dev-webpack',function() {
 //release webpack 
 gulp.task('release-webpack',function() {
 	//插件添加入口配置
-	webpackConfig.plugins = webpackConfig.plugins.concat(entryPlugins( config.release.output ));
+	webpackConfig.r_plugins = webpackConfig.r_plugins.concat(entryPlugins( config.release.output ));
 	
 	webpack({
         entry:webpackConfig.entry,
@@ -226,7 +240,7 @@ gulp.task('release-webpack',function() {
                 { test: /\.tpl$/, loader: "ejs-loader?variable=data" }
             ]
         },
-        plugins:webpackConfig.plugins,
+        plugins:webpackConfig.r_plugins,
         //watch:true
     },function(err, stats) {
 		//  if(err) throw new gutil.PluginError("webpack", err);
