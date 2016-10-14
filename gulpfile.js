@@ -86,9 +86,9 @@ var entryPlugins = function ( output ) {
 //dev
 webpackConfig.plugins = [
 	//提取公共js
-	new CommonsChunkPlugin('common.js')
+	new CommonsChunkPlugin('common.js'),
 	//抽离css(link引入)
-	//new ExtractTextPlugin('../css/[name].css'),
+	new ExtractTextPlugin('../css/[name].css'),
 	/*new webpack.ProvidePlugin({
         $: "jquery",
         jQuery: "jquery",
