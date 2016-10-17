@@ -1,9 +1,17 @@
-require('../../css/index.css');
+//引入公共样式
+require('../../css/base.css');
+
+require('../../css/index_L01.css');
+
+
+//引入插件
 require('../plugin/zepto.min.js');
 require('../plugin/zepto.fullpage.js');
 
-var info = require('../../tmpl/info.tpl');
-var info2 = require('../../tmpl/info2.tpl');
+
+//引入动画库
+require('../../css/animate.css');
+require('../../css/animations.css');
 
 Zepto(function() {
 	/*
@@ -110,7 +118,7 @@ Zepto(function() {
 		},
 		clickBtn:function() {
 			
-			$( '.c-btn' ).click(function() {
+			$( '.dot' ).click(function() {
 				$('.form').css('display','block');
 				
 				$(this).parent().parent().remove();
@@ -155,7 +163,7 @@ Zepto(function() {
 					});
 				}else {
 					
-					$('<div class="alert color-1 js-animate animated" data-animate="fadeIn">请填写完整的信息~</div>').insertAfter($('.form'))
+					$('<div class="alert js-animate animated" data-animate="fadeIn">请填写完整的信息~</div>').insertAfter($('.form'))
 				}
 			})
 		}
@@ -181,16 +189,16 @@ Zepto(function() {
 					_this.baiduMap(  );
 					
 					console.log(data)
-					var html = info( data );
+					/*var html = info( data );
 					var html2 = info2( data );
 					$('.message').append( html );
-					$('.page4-info').append( html2 )
+					$('.page3-info').append( html2 )*/
 					
 					var n_time = data.data.createTime.substr(0,10);
 					var m_time = data.data.createTime.substr(10);
 					$('.page2-5').append('<div class="n-time">'+n_time+'</div>'+
 										 '<div class="m-time">'+m_time+'</div>');
-					$('.GPS').append('<a class="color-1" href="http://api.map.baidu.com/geocoder?address=四川省成都市高新区香年广场&output=html&src=" ">开始导航</a>')
+					$('.GPS').append('<a class="" href="http://api.map.baidu.com/geocoder?address=四川省成都市高新区香年广场&output=html&src=" ">开始导航</a>')
 				}
 			});
 		},
@@ -214,7 +222,7 @@ Zepto(function() {
 		}
 	}
 	initData.init();
+	
+	
+	
 })
-	
-	
-

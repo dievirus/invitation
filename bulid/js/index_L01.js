@@ -1,14 +1,22 @@
-webpackJsonp([0],{
+webpackJsonp([1],{
 
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(1);
+	//引入公共样式
+	__webpack_require__(21);
+
+	__webpack_require__(23);
+
+
+	//引入插件
 	__webpack_require__(17);
 	__webpack_require__(18);
 
-	var info = __webpack_require__(19);
-	var info2 = __webpack_require__(20);
+
+	//引入动画库
+	__webpack_require__(26);
+	__webpack_require__(28);
 
 	Zepto(function() {
 		/*
@@ -115,7 +123,7 @@ webpackJsonp([0],{
 			},
 			clickBtn:function() {
 				
-				$( '.c-btn' ).click(function() {
+				$( '.dot' ).click(function() {
 					$('.form').css('display','block');
 					
 					$(this).parent().parent().remove();
@@ -160,7 +168,7 @@ webpackJsonp([0],{
 						});
 					}else {
 						
-						$('<div class="alert color-1 js-animate animated" data-animate="fadeIn">请填写完整的信息~</div>').insertAfter($('.form'))
+						$('<div class="alert js-animate animated" data-animate="fadeIn">请填写完整的信息~</div>').insertAfter($('.form'))
 					}
 				})
 			}
@@ -186,16 +194,16 @@ webpackJsonp([0],{
 						_this.baiduMap(  );
 						
 						console.log(data)
-						var html = info( data );
+						/*var html = info( data );
 						var html2 = info2( data );
 						$('.message').append( html );
-						$('.page4-info').append( html2 )
+						$('.page3-info').append( html2 )*/
 						
 						var n_time = data.data.createTime.substr(0,10);
 						var m_time = data.data.createTime.substr(10);
 						$('.page2-5').append('<div class="n-time">'+n_time+'</div>'+
 											 '<div class="m-time">'+m_time+'</div>');
-						$('.GPS').append('<a class="color-1" href="http://api.map.baidu.com/geocoder?address=四川省成都市高新区香年广场&output=html&src=" ">开始导航</a>')
+						$('.GPS').append('<a class="" href="http://api.map.baidu.com/geocoder?address=四川省成都市高新区香年广场&output=html&src=" ">开始导航</a>')
 					}
 				});
 			},
@@ -219,68 +227,38 @@ webpackJsonp([0],{
 			}
 		}
 		initData.init();
+		
+		
+		
 	})
-		
-		
-
-
 
 /***/ },
 
-/***/ 1:
+/***/ 21:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 19:
+/***/ 23:
 /***/ function(module, exports) {
 
-	module.exports = function (data) {
-	var __t, __p = '', __j = Array.prototype.join;
-	function print() { __p += __j.call(arguments, '') }
-
-	 if( data.code == "000000" ){ ;
-	__p += '\r\n<div class="color-1 js-animate animated" data-animate="bounceIn">各位亲朋好友:</div>\r\n<div class="color-1 js-animate animated" data-animate="zoomIn">兹定于 ' +
-	((__t = ( data.data.createTime+data.data.startTime)) == null ? '' : __t) +
-	' 参加 ' +
-	((__t = ( data.data.name)) == null ? '' : __t) +
-	'</div>\r\n<div class="color-2 js-animate animated" data-animate="zoomInLeft">地点：' +
-	((__t = ( data.data.location)) == null ? '' : __t) +
-	'</div>\r\n<div class="color-2 js-animate animated" data-animate="zoomInRight">邀请人：' +
-	((__t = ( data.data.inviter)) == null ? '' : __t) +
-	'</div>\r\n<div class="rr mt-40 color-1 js-animate animated" data-animate="tossing">敬请光临</div>\r\n';
-	 } ;
-	__p += '\r\n';
-	return __p
-	}
+	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 20:
+/***/ 26:
 /***/ function(module, exports) {
 
-	module.exports = function (data) {
-	var __t, __p = '', __j = Array.prototype.join;
-	function print() { __p += __j.call(arguments, '') }
+	// removed by extract-text-webpack-plugin
 
-	 if( data.code == "000000" ){ ;
-	__p += '\r\n<div class="page4-date color-2 js-animate animated" data-animate="rotateInDownRight">时间：' +
-	((__t = ( data.data.startTime)) == null ? '' : __t) +
-	'</div>\r\n<div class="page4-address color-2 js-animate animated" data-animate="rotateInDownLeft">地点：' +
-	((__t = ( data.data.location)) == null ? '' : __t) +
-	'</div>\r\n<div class="page4-time color-2 js-animate animated" data-animate="rotateInDownRight">开席时间：' +
-	((__t = ( data.data.cTime)) == null ? '' : __t) +
-	'</div>\r\n<div class="page4-times color-2 js-animate animated" data-animate="rotateInDownLeft">酒席场数：' +
-	((__t = ( data.data.times)) == null ? '' : __t) +
-	'</div>\r\n<div class="page4-times color-2 js-animate animated" data-animate="rotateInDownRight">邀请人：' +
-	((__t = ( data.data.inviter)) == null ? '' : __t) +
-	'</div>\r\n';
-	 } ;
-	__p += '\r\n';
-	return __p
-	}
+/***/ },
+
+/***/ 28:
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
 
 /***/ }
 
