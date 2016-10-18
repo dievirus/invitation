@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html >
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1, minimum-scale=1,user-scalable=0">
+		<meta name="description" content="礼金理是是一个送礼的管家,可以记录送礼和收礼,方便管理和查看">
+		<meta name="keywords" content="请柬，邀请函，礼金理">   
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta content="yellow" name="apple-mobile-web-app-status-bar-style">
+		<meta name="apple-touch-fullscreen" content="yes">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="format-detection" content="address=no">
+		<!-- UC应用模式 -->
+		<meta name="browsermode" content="application">
+		<!-- QQ强制全屏 -->
+		<meta name="x5-fullscreen" content="true">
+		<!-- QQ应用模式 -->
+		<meta name="x5-page-mode" content="app">
+		
+		<!--百度地图-->
+		<script src="http://api.map.baidu.com/api?v=2.0&ak=OvuR8Z0yT6pMsOhcnOUPvzpa" type="text/javascript"></script>
+		<title>邀请函</title>
+	<link href="/invitation/bulid/js/../css/index_L02.css" rel="stylesheet"></head>
+	<body >
+		<div class="wp">
+			<div class="page-wrap wp-inner">
+				<div class="page1-wrap page page1" >
+					<div class="page1-container  animated js-animate" data-animate="fadeIn">
+						<div class="page1-1  animated js-animate" data-animate="zoomIn5s">
+							<img src="images/L02_page1_1.png" alt="" />
+						</div>
+						<div class="marrier js-animate animated" data-animate="zoomIn10s">徐之恒 & 李蕾</div>
+						<div class="n-time js-animate animated color-666" data-animate="zoomIn15s">2016年10月30日 12时00分</div>
+						<div class="m-time js-animate animated color-666" data-animate="zoomIn15s">农历:九月十二(周三)</div>
+						<div class="page1-location js-animate animated color-666" data-animate="zoomIn20s">崇州大酒店</div>
+						<div class="page1-2 js-animate animated" data-animate="zoomIn25s">
+							<img src="images/L02_page1_2.png" alt="" />
+						</div>
+					</div>
+				</div>
+				
+				<div class="page2-wrap page page2">
+					<div class="page2-1 js-animate animated" data-animate="zoomInLeft">
+						<img src="images/test1.png" alt="" class="img-100"/>
+					</div>
+					<div class="page2-2 js-animate animated" data-animate="zoomIn15s">
+						<img src="images/L02_page2_1.png" alt="" />
+					</div>
+				</div>
+				
+				<div class="page3-wrap page page3">
+					<div class="page3-5 js-animate animated" data-animate="rubberBand"></div>
+					<div class="map js-animate animated" data-animate="fadeIn" >
+						<div id="map-container"></div>
+					</div>
+					<div class="GPS js-animate animated" data-animate="fadeIn">
+					</div>
+					<div class="page3-info">
+						<div class="page4-date  js-animate animated" data-animate="rotateInDownRight">时间：2016年9月15日（农历八月十五）</div>
+						<div class="page4-address js-animate animated" data-animate="rotateInDownLeft">地点：成都市武侯区皮尔菲特大酒店</div>
+						<div class="page4-time js-animate animated" data-animate="rotateInDownRight">开席时间：中午12:00</div>
+						<div class="page4-times js-animate animated" data-animate="rotateInDownLeft">酒席场数：3场</div>
+						<div class="page4-times js-animate animated" data-animate="rotateInDownRight">邀请人：李大伟、郑萌萌</div>
+					</div>
+					<!--<div class="page4-text color-1 js-animate animated" data-animate="fadeIn">期待您的光临</div>-->
+				</div>
+				
+				<div class="page4-wrap page page4">
+					<div class="page5-5 js-animate animated" data-animate="rotateIn"></div>
+					<div class="form">
+						<div class="page5-name js-animate animated" data-animate="zoomInLeft">
+							<input type="text" placeholder="请输入姓名" class="name_val"/>
+						</div>
+						<div class="page5-textarea js-animate animated" data-animate="zoomInRight">
+							<textarea name="" rows="" cols="" placeholder="请写下您对朋友的祝福吧~" class="textarea_val" id="textarea" maxlength="300"></textarea>
+						</div>
+						<div class="page5-num js-animate animated" data-animate="zoomInLeft">
+							<input type="text" placeholder="请输入人数" class="num_val"/>
+						</div>
+						<div class="page5-button js-animate animated" data-animate="zoomInRight">
+							<button class="accept">接受邀请</button>
+						</div>
+					</div> 
+					<div class="container-wrap js-animate animated" data-animate="fadeIn">
+						<div class="container  c-btn" >  
+						    <div class="dot">接受邀请</div>  
+						    <div class="pulse1"></div>  
+						</div>
+						<div class="c-btn-text">提示：点击后将您的祝福发送给邀请人，存入礼金理纪念册，让爱永存</div>
+					</div>
+					
+					<div class="modal">
+						<div class="modal-content">
+							<div>您已接受邀请</div>
+							<button class="ok">确认</button>
+						</div>
+					</div>
+				</div>
+				
+				<div class="page5-wrap page page5">
+					<div class="logo js-animate animated" data-animate="fadeIn"></div>
+					<div class="company js-animate animated" data-animate="flip">礼金理科技有限公司</div>
+					<div class="iphone-down js-animate animated" data-animate="flipInX"></div>
+					<div class="android-down js-animate animated" data-animate="flipInY"></div>
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="music play " ></div>
+		<div class="up"></div>
+		<audio controls="controls" autoplay="autoplay" id="bgMusic">
+			<source src="http://odpc0769s.bkt.clouddn.com/invitationbg.mp3" type="audio/mpeg" >
+		</audio>
+		<script>
+			/*
+			 	自适应
+			 * */
+			var auto = {
+				init:function() {
+					var dpr = window.devicePixelRatio || 1;
+					var docEl = document.documentElement;
+					
+					//设置data-drp属性
+					docEl.setAttribute('data-dpr', dpr);
+					//缩放比例
+					var scale = 1 / dpr;
+					//设置meta 压缩界面 模拟设备的高分辨率
+					document.querySelector('meta[name="viewport"]').setAttribute('content', 'initial-scale=' + scale + ',maximum-scale=' + scale + ', minimum-scale=' + scale + ',user-scalable=no');
+				
+					//设置html中font-size大小
+					docEl.style.fontSize = docEl.clientWidth / 10 + 'px';
+				}
+			}
+			
+			auto.init();
+			
+			
+		</script>
+	<script type="text/javascript" src="/invitation/bulid/js/common.js"></script><script type="text/javascript" src="/invitation/bulid/js/index_L02.js"></script></body>
+</html>
