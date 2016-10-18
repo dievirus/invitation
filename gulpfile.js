@@ -14,7 +14,7 @@ var gulp = require('gulp'),
 	ExtractTextPlugin = require("extract-text-webpack-plugin"),
 	HtmlWebpackPlugin = require('html-webpack-plugin'),
 	CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
-	
+
 //源目录路径
 var srcDir = path.resolve(process.cwd(), 'src');
 
@@ -56,13 +56,13 @@ var entryPlugins = function ( output ) {
     entryHtml.forEach(function (filePath) {
 
         var filename = filePath.substring(filePath.lastIndexOf('\/') + 1, filePath.lastIndexOf('.'));
-        
+
         var conf = {};
 
         if (filename in entries) {
 
             conf.filename = output+filename + '.html';
-            
+
             // 模板源位置
             conf.template = filePath;
 
@@ -133,15 +133,15 @@ gulp.task('dev-imagemin', function(){
     gulp.src( srcDir + '/images/**/*')
         .pipe(imagemin())
         .pipe(gulp.dest( config.dev.output + '/images' ));
-}); 
+});
 gulp.task('imagemin', function(){
     gulp.src( srcDir + '/images/**/*')
         .pipe(imagemin())
         .pipe(gulp.dest( config.release.output + '/images' ));
-}); 
+});
 
 //less任务
-gulp.task('less',function() { 
+gulp.task('less',function() {
 	gulp.src(srcDir + '/less/**/*.less')
 		.pipe(plumber({errorHandler: notify.onError('Error: <%= error.message %>')}))
         .pipe(less()) //该任务调用的模块
@@ -153,6 +153,10 @@ gulp.task('less',function() {
 //          'pathToSpriteSheetFromCSS': '/images/sprite.png'
 //      }))
         .pipe(gulp.dest(srcDir + '/css')); //将会在src/css下生成.css
+
+    gulp.src( srcDir +'/css/*.css')
+        .pipe(gulp.dest( config.dev.output +'css' ));
+
 });
 //css压缩
 gulp.task('cssmin', function () {
@@ -167,7 +171,7 @@ gulp.task('cssmin', function () {
 
 //启动监听事件
 gulp.task('watch',function() {
-//	gulp.watch( srcDir + '/html/**/*' ,['dev-webpack']);	
+//	gulp.watch( srcDir + '/html/**/*' ,['dev-webpack']);
 //	gulp.watch( srcDir + '/js/**/*' ,['dev-webpack']);
 
 	gulp.watch( srcDir + '/less/*.less',['less']);
@@ -179,7 +183,7 @@ gulp.task('watch',function() {
 gulp.task('dev-webpack',function() {
 	//插件添加入口配置
 	webpackConfig.plugins = webpackConfig.plugins.concat(entryPlugins( config.dev.output ));
-	
+
 	webpack({
         entry:webpackConfig.entry,
         output: {
@@ -213,11 +217,11 @@ gulp.task('dev-webpack',function() {
     })
 });
 
-//release webpack 
+//release webpack
 gulp.task('release-webpack',function() {
 	//插件添加入口配置
 	webpackConfig.r_plugins = webpackConfig.r_plugins.concat(entryPlugins( config.release.output ));
-	
+
 	webpack({
         entry:webpackConfig.entry,
         output: {
