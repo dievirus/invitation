@@ -107,10 +107,15 @@ p {
 .fullPage-dir-h {
   float: left;
 }
-.page1-wrap {
-  height: 100%;
+.wp {
   background-image: url('../images/L02_bg.jpg');
-  background-size: 100% 100%;
+  background-size: cover;
+  background-attachment: fixed;
+  -webkit-animation: bgMove 60s linear infinite;
+  animation: bgMove 60s linear infinite;
+}
+.page {
+  height: 100%;
   position: relative;
   overflow: hidden;
 }
@@ -166,13 +171,6 @@ p {
   margin: 0 auto;
   margin-top: 1.33333333rem;
 }
-.page2-wrap {
-  height: 100%;
-  background-image: url('../images/L02_bg.jpg');
-  background-size: 100% 100%;
-  position: relative;
-  overflow: hidden;
-}
 .page2-wrap .page2-1 {
   width: 9.06666667rem;
   margin: 0 auto;
@@ -181,13 +179,6 @@ p {
 .page2-wrap .page2-2 {
   margin-top: 1.33333333rem;
   margin-left: 1.33333333rem;
-}
-.page3-wrap {
-  height: 100%;
-  background-image: url('../images/L02_bg.jpg');
-  background-size: 100% 100%;
-  position: relative;
-  overflow: hidden;
 }
 .page3-wrap .page3-5 {
   background-image: url('../images/page4_1.png');
@@ -296,13 +287,6 @@ p {
   width: 0.8rem;
   top: 0.2rem;
   right: 0;
-}
-.page4-wrap {
-  height: 100%;
-  background-image: url('../images/L02_bg.jpg');
-  background-size: 100% 100%;
-  position: relative;
-  overflow: hidden;
 }
 .page4-wrap .page3-1 {
   display: flex;
@@ -773,5 +757,16 @@ p {
   100% {
     transform: scale(1);
     opacity: 0.0;
+  }
+}
+@keyframes bgMove {
+  0% {
+    background-position: 0;
+  }
+  50% {
+    background-position: -240px;
+  }
+  100% {
+    background-position: 0px;
   }
 }

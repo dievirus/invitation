@@ -1,11 +1,19 @@
 @import "base.less";
+
+.wp{
+    background-image: url('../images/L02_bg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    -webkit-animation: bgMove 60s linear infinite;
+    animation: bgMove 60s linear infinite;
+}
+.page{
+    height:100%;
+    position: relative;
+    overflow: hidden;
+}
 //---------------page1-wrap--------------------
 .page1-wrap {
-    height:100%;
-    background-image: url('../images/L02_bg.jpg');
-    background-size: 100% 100%;
-    position:relative;
-    overflow: hidden;
     .page1-container {
         .px2rem(width,566);
         .px2rem(height,750);
@@ -46,11 +54,6 @@
 }
 //---------------page2-wrap--------------------
 .page2-wrap {
-    height:100%;
-    background-image: url('../images/L02_bg.jpg');
-    background-size: 100% 100%;
-    position:relative;
-    overflow: hidden;
     .page2-1 {
         .px2rem(width,680);
         margin:0 auto;
@@ -64,11 +67,6 @@
 
 //---------------page3-wrap--------------------
 .page3-wrap {
-    height:100%;
-    background-image: url('../images/L02_bg.jpg');
-    background-size: 100% 100%;
-    position:relative;
-    overflow: hidden;
     .page3-5 {
         background-image: url('../images/page4_1.png');
         .px2rem(width,187);
@@ -135,11 +133,6 @@
 }
 //---------------page4-wrap--------------------
 .page4-wrap {
-    height:100%;
-    background-image: url('../images/L02_bg.jpg');
-    background-size: 100% 100%;
-    position:relative;
-    overflow: hidden;
     .page3-1 {
         display: flex;
         .px2rem(margin-top,250);
@@ -432,3 +425,14 @@
         opacity: 0.0;  
     }  
 } 
+@keyframes bgMove {
+    0% {
+        background-position: 0;
+    }
+    50% {
+        background-position: -240px;
+    }
+    100% {
+        background-position: 0px;
+    }
+}
