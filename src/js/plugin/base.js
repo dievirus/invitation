@@ -2,9 +2,12 @@
 require('../plugin/zepto.min.js');
 require('../plugin/zepto.fullpage.js');
 //引入动画库
-require('../../css/index_h01.css');
-//require('../../css/animate.css');
-//require('../../css/animations.css');
+require('../../css/animate.css');
+require('../../css/animations.css');
+
+//引入模板
+var info = require('../../tmpl/info.tpl');
+var info2 = require('../../tmpl/info2.tpl');
 
 Zepto(function() {
     /*
