@@ -3,39 +3,13 @@
 
 //---------------page1-wrap--------------------
 .wp{
-    background-image: url('../images/h02_bg.png');
+    background-image: url('../images/h03_bg.jpg');
     background-size: cover;
     background-attachment: fixed;
     -webkit-animation: bgMove 60s linear infinite;
     animation: bgMove 60s linear infinite;
 }
 
-
-.wp.filter-blur{
-    background: none;
-    -webkit-animation: none;
-    animation: none;
-
-    position: relative;
-    &:after{
-        content: " ";
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        z-index: -100;
-        -webkit-filter: blur(5px);
-        background-color: rgba(255,255,255,0.4);
-        background-image: url('../images/h01_bg.jpg');
-        background-size: cover;
-//      background-attachment: fixed;
-        -webkit-animation: bgMove 60s linear infinite;
-        animation: bgMove 60s linear infinite;
-//      -webkit-animation: bgBlur 3s infinite;
-//      animation: bgBlur 3s infinite;
-    }
-}
 
 @keyframes bgMove {
     0% {
@@ -49,17 +23,7 @@
     }
 }
 
-@keyframes bgBlur{
-    0% {
-        -webkit-filter: blur(5px);
-    }
-    50% {
-        -webkit-filter: blur(0px);
-    }
-    100% {
-        -webkit-filter: blur(5px);
-    }
-}
+
 
 
 
@@ -72,42 +36,67 @@
 
 .page1-wrap {
 
+    .page1-bg{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left:0;
+        .px2rem(padding, 30);
+        img {
+            margin:0 auto;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
     .page1-1 {
         position: absolute;
-        .px2rem(top,20);
+        .px2rem(top, 120);
         left:0;
         width:100%;
         img {
             margin:0 auto;
-            .px2rem(width,646);
+            .px2rem(width,450);
         }
     }
     .page1-2 {
         position:absolute;
-        .px2rem(bottom,20);
+        .px2rem(top,280);
         left:0;
         width:100%;
          img {
             margin:0 auto;
-            .px2rem(width,646);
+            .px2rem(width,300);
         }
     }
     .page1-3 {
-        .px2rem(margin-top,300);
-        display: flex;
+        position: absolute;
+        .px2rem(top, 370);
+        left:0;
+        width:100%;
         img {
-            .px2rem(width,170);
+            .px2rem(width,440);
             margin:auto;
         }
     }
     .page1-4 {
-        display:flex;
+        position: absolute;
+        .px2rem(bottom, 160);
+        left:0;
+        width:100%;
         img {
-            .px2rem(width,220);
+            .px2rem(width,440);
             margin:auto;
         }
     }
     .page1-5 {
+        position: absolute;
+        .px2rem(top, 520);
+        left:0;
+        width:100%;
+
+
         text-align: center;
         color: #b60;
         font-weight: bolder;
@@ -118,14 +107,20 @@
         }
     }
     .page1-6 {
-        display:flex;
-        .px2rem(margin-top,50);
+        position: absolute;
+        .px2rem(bottom, 420);
+        left:0;
+        width:100%;
         img {
-            margin:auto;
-            .px2rem(width,240);
+            margin: 0 auto;
+            .px2rem(width,220);
         }
     }
     .page1-7 {
+        position: absolute;
+        .px2rem(bottom, 370);
+        left:0;
+        width:100%;
         text-align: center;
     }
 }

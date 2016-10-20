@@ -3,7 +3,7 @@
 
 //---------------page1-wrap--------------------
 .wp{
-    background-image: url('../images/h02_bg.png');
+    background-image: url('../images/h04_bg.jpg');
     background-size: cover;
     background-attachment: fixed;
     -webkit-animation: bgMove 60s linear infinite;
@@ -11,31 +11,7 @@
 }
 
 
-.wp.filter-blur{
-    background: none;
-    -webkit-animation: none;
-    animation: none;
 
-    position: relative;
-    &:after{
-        content: " ";
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        z-index: -100;
-        -webkit-filter: blur(5px);
-        background-color: rgba(255,255,255,0.4);
-        background-image: url('../images/h01_bg.jpg');
-        background-size: cover;
-//      background-attachment: fixed;
-        -webkit-animation: bgMove 60s linear infinite;
-        animation: bgMove 60s linear infinite;
-//      -webkit-animation: bgBlur 3s infinite;
-//      animation: bgBlur 3s infinite;
-    }
-}
 
 @keyframes bgMove {
     0% {
@@ -49,17 +25,7 @@
     }
 }
 
-@keyframes bgBlur{
-    0% {
-        -webkit-filter: blur(5px);
-    }
-    50% {
-        -webkit-filter: blur(0px);
-    }
-    100% {
-        -webkit-filter: blur(5px);
-    }
-}
+
 
 
 
@@ -155,7 +121,7 @@
     text-shadow: 0 0 3px #fff;
 
     .page3-5 {
-        background: rgba(0,126,128,0.5) url('../images/page4_1.png');
+        background: #795f21 url('../images/page4_1.png');
         border-radius: 5px;
         .px2rem(width,187);
         .px2rem(height,47);
@@ -179,7 +145,7 @@
         a {
             text-decoration: none;
             color: #fff;
-            background-color: #81cdec;
+            background-color: #795f21;
             padding: 0.5em;
             width: 6em;
             margin-right: auto;
@@ -238,7 +204,7 @@
     }
     .page5-5 {
         background-image: url('../images/page5_5.png');
-        background-color: rgb(119, 155, 180);
+        background-color: #795f21;
         .px2rem(width,188);
         .px2rem(height,46);
         margin:0 auto;
@@ -248,6 +214,7 @@
     }
     .form {
         display:none;
+        margin: 2em;
         .px2rem(margin-right,45);
         .px2rem(margin-left, 45);
         .px2rem(padding-top,   45);
@@ -336,7 +303,7 @@
                 position: absolute;
                 left:50%;
                 top:50%;
-                background:#779bb4;
+                background: #c3b8a3;
                 color:#fff;
                 .px2px(font-size,36);
                 text-align: center;
@@ -352,7 +319,6 @@
                 position: absolute;
                 .px2rem(width,440);
                 .px2rem(height,440);
-                background:#fff;
                 left: 50%;
                 top: 50%;
                 .px2rem(margin-left,-220);
@@ -360,7 +326,7 @@
                 border-radius: 100%;
                 z-index: 1;
                 opacity: 0;
-                background:#6ac7d6;
+                background: #795f21;
                 -webkit-animation: warn 2s ease-out infinite;
                 animation: warn 2s ease-out infinite;
             }
