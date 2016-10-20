@@ -76,42 +76,67 @@
 
 .page1-wrap {
 
-    .page1-1 {
+    .page1-bg{
         position: absolute;
-        .px2rem(top,20);
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left:0;
+        img {
+            margin:0 auto;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+.page1-1 {
+        position: absolute;
+        .px2rem(top, 0);
         left:0;
         width:100%;
         img {
             margin:0 auto;
-            .px2rem(width,646);
+            width: 100%;
         }
     }
     .page1-2 {
         position:absolute;
-        .px2rem(bottom,20);
+        .px2rem(top,280);
         left:0;
         width:100%;
          img {
             margin:0 auto;
-            .px2rem(width,646);
+            .px2rem(width,260);
         }
     }
     .page1-3 {
-        .px2rem(margin-top,300);
-        display: flex;
+        position: absolute;
+        .px2rem(top, 150);
+        left:0;
+        width:100%;
         img {
-            .px2rem(width,170);
+            .px2rem(width,120);
             margin:auto;
         }
     }
     .page1-4 {
-        display:flex;
+        position: absolute;
+        .px2rem(bottom, 0);
+        left:0;
+        width:100%;
         img {
-            .px2rem(width,220);
+            width: 100%;
             margin:auto;
         }
     }
+
     .page1-5 {
+        position: absolute;
+        .px2rem(top, 520);
+        left:0;
+        width:100%;
+
+
         text-align: center;
         color: #b60;
         font-weight: bolder;
@@ -122,15 +147,22 @@
         }
     }
     .page1-6 {
-        display:flex;
-        .px2rem(margin-top,50);
+        position: absolute;
+        .px2rem(bottom, 420);
+        left:0;
+        width:100%;
         img {
-            margin:auto;
-            .px2rem(width,240);
+            margin: 0 auto;
+            .px2rem(width,220);
         }
     }
     .page1-7 {
+        position: absolute;
+        .px2rem(bottom, 370);
+        left:0;
+        width:100%;
         text-align: center;
+        color: #c00;
     }
 }
 //---------------page2-wrap--------------------
@@ -140,7 +172,7 @@
         .px2rem(padding-top,30);
         .px2rem(padding-bottom,30);
         img {
-            .px2rem(width,378);
+            .px2rem(width,120);
             margin:auto;
         }
     }
