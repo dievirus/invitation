@@ -1,19 +1,15 @@
 @import "base.less";
 
-*{
-//  border: 1px #00c solid!important;
-}
-
-
 
 //---------------page1-wrap--------------------
 .wp{
-    background-image: url('../images/h01_bg.jpg');
+    background-image: url('../images/h02_bg.png');
     background-size: cover;
     background-attachment: fixed;
     -webkit-animation: bgMove 60s linear infinite;
     animation: bgMove 60s linear infinite;
 }
+
 
 .wp.filter-blur{
     background: none;
@@ -75,71 +71,67 @@
 }
 
 .page1-wrap {
+    background-color: rgba(255, 255, 255, 0.9);
 
     .page1-bg{
         position: absolute;
-        top: 0;
-        bottom: 0;
+        .px2rem(top,100);
+        left:0;
         right: 0;
-        left:0;
         img {
             margin:0 auto;
-            width: 100%;
-            height: 100%;
+            .px2rem(width,630);
         }
     }
 
-    .page1-1 {
-        position: absolute;
-        .px2rem(top, 0);
-        left:0;
-        width:100%;
-        img {
-            margin:0 auto;
-            width: 100%;
-        }
-    }
-    .page1-2 {
-        position:absolute;
-        .px2rem(top,280);
-        left:0;
-        width:100%;
-         img {
-            margin:0 auto;
-            .px2rem(width,260);
-        }
-    }
-    .page1-3 {
-        position: absolute;
-        .px2rem(top, 150);
-        left:0;
-        width:100%;
-        img {
-            .px2rem(width,120);
-            margin:auto;
-        }
-    }
-    .page1-4 {
-        position: absolute;
-        .px2rem(bottom, 0);
-        left:0;
-        width:100%;
-        img {
-            width: 100%;
-            margin:auto;
-        }
-    }
 
+
+//  .page1-1 {
+//      position: absolute;
+//      .px2rem(top,20);
+//      left:0;
+//      width:100%;
+//      img {
+//          margin:0 auto;
+//          .px2rem(width,646);
+//      }
+//  }
+//  .page1-2 {
+//      position:absolute;
+//      .px2rem(bottom,20);
+//      left:0;
+//      width:100%;
+//       img {
+//          margin:0 auto;
+//          .px2rem(width,646);
+//      }
+//  }
+//  .page1-3 {
+//      .px2rem(margin-top,300);
+//      display: flex;
+//      img {
+//          .px2rem(width,170);
+//          margin:auto;
+//      }
+//  }
+//  .page1-4 {
+//      display:flex;
+//      img {
+//          .px2rem(width,220);
+//          margin:auto;
+//      }
+//  }
     .page1-5 {
+
         position: absolute;
-        .px2rem(top, 520);
+        .px2rem(top,180);
         left:0;
         width:100%;
 
 
         text-align: center;
         color: #b60;
-        font-weight: bolder;
+//      font-weight: bolder;
         text-shadow: 0 0 3px #fff;
         .px2rem(margin-top,80);
         .marrier {
@@ -148,21 +140,20 @@
     }
     .page1-6 {
         position: absolute;
-        .px2rem(bottom, 420);
+        .px2rem(top,450);
         left:0;
         width:100%;
         img {
-            margin: 0 auto;
-            .px2rem(width,220);
+            margin:auto;
+            .px2rem(width,240);
         }
     }
     .page1-7 {
         position: absolute;
-        .px2rem(bottom, 370);
+        .px2rem(top,500);
         left:0;
         width:100%;
         text-align: center;
-        color: #c00;
     }
 }
 //---------------page2-wrap--------------------
@@ -172,7 +163,7 @@
         .px2rem(padding-top,30);
         .px2rem(padding-bottom,30);
         img {
-            .px2rem(width,120);
+            .px2rem(width,378);
             margin:auto;
         }
     }
@@ -191,8 +182,7 @@
     text-shadow: 0 0 3px #fff;
 
     .page3-5 {
-        background: rgba(256,32,32,0.3) url('../images/page4_1.png');
-        box-shadow: 0 0 5px 15px rgba(256,32,32,0.3);
+        background: rgba(0,126,128,0.5) url('../images/page4_1.png');
         border-radius: 5px;
         .px2rem(width,187);
         .px2rem(height,47);
@@ -216,7 +206,7 @@
         a {
             text-decoration: none;
             color: #fff;
-            background-color: #c66;
+            background-color: #81cdec;
             padding: 0.5em;
             width: 6em;
             margin-right: auto;
@@ -275,6 +265,7 @@
     }
     .page5-5 {
         background-image: url('../images/page5_5.png');
+        background-color: rgb(119, 155, 180);
         .px2rem(width,188);
         .px2rem(height,46);
         margin:0 auto;
@@ -288,7 +279,8 @@
         .px2rem(margin-left, 45);
         .px2rem(padding-top,   45);
         .px2rem(padding-bottom,45);
-        background-color: rgba(255,32,32,0.3);
+//      background-color: rgba(255,32,32,0.3);
+        background-color: rgba(11, 70, 78, 0.3);
 
         .page5-name {
             text-align: center;
@@ -371,7 +363,7 @@
                 position: absolute;
                 left:50%;
                 top:50%;
-                background:#e46c7a;
+                background:#779bb4;
                 color:#fff;
                 .px2px(font-size,36);
                 text-align: center;
@@ -385,17 +377,17 @@
             }
             .pulse1 {
                 position: absolute;
-                .px2rem(width,360);
-                .px2rem(height,360);
+                .px2rem(width,440);
+                .px2rem(height,440);
                 background:#fff;
                 left: 50%;
                 top: 50%;
-                .px2rem(margin-left,-180);
-                .px2rem(margin-top,-180);
+                .px2rem(margin-left,-220);
+                .px2rem(margin-top,-220);
                 border-radius: 100%;
                 z-index: 1;
                 opacity: 0;
-                background:#e46c7a;
+                background:#6ac7d6;
                 -webkit-animation: warn 2s ease-out infinite;
                 animation: warn 2s ease-out infinite;
             }
@@ -451,7 +443,7 @@
 //--------------page5-wrap-----------
 .page5-wrap {
     height:100%;
-    background:#d52e31;
+    background: rgba(239,86,86,0.9); //#d52e31;
     background-size: 100% 100%;
     position:relative;
     overflow: hidden;
