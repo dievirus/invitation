@@ -179,10 +179,10 @@ Zepto(function() {
                     _this.baiduMap(  );
 
                     console.log(data)
-                    /*var html = info( data );
+                    var html = info( data );
                     var html2 = info2( data );
                     $('.message').append( html );
-                    $('.page3-info').append( html2 )*/
+                    $('.data-info').append( html2 )
 
                     var n_time = data.data.createTime.substr(0,10);
                     var m_time = data.data.createTime.substr(10);
