@@ -171,16 +171,8 @@ p {
   margin: 0 auto;
   margin-top: 1.33333333rem;
 }
-.page2-wrap .page2-1 {
-  width: 9.06666667rem;
-  margin: 0 auto;
-  margin-top: 0.26666667rem;
-}
-.page2-wrap .page2-2 {
-  margin-top: 1.33333333rem;
-  margin-left: 1.33333333rem;
-}
 .page3-wrap .page3-5 {
+  background: #0c80bc;
   background-image: url('../images/page4_1.png');
   width: 2.49333333rem;
   height: 0.62666667rem;
@@ -189,10 +181,10 @@ p {
   background-size: contain;
 }
 .page3-wrap .map {
-  width: 8.4rem;
-  height: 5.06666667rem;
+  width: 7.73333333rem;
+  height: 4rem;
   margin: 0 auto;
-  margin-top: 1rem;
+  margin-top: 0.4rem;
 }
 .page3-wrap .map #map-container {
   width: 100%;
@@ -205,7 +197,10 @@ p {
   text-decoration: none;
   margin-top: 0.53333333rem;
   font-size: 42px;
-  display: block;
+  padding: 0.13333333rem;
+  background: #0c80bc;
+  color: #fff;
+  display: inline-block;
 }
 [data-dpr="2"] .page3-wrap .GPS a {
   font-size: 28px;
@@ -222,28 +217,28 @@ p {
 [data-dpr="4"] .page3-wrap .GPS a {
   font-size: 56px;
 }
-.page3-wrap .page3-info {
+.page3-wrap .data-info {
   margin-top: 0.26666667rem;
   font-size: 42px;
+  color: #0c80bc;
   text-align: center;
-  color: red;
 }
-[data-dpr="2"] .page3-wrap .page3-info {
+[data-dpr="2"] .page3-wrap .data-info {
   font-size: 28px;
 }
-[data-dpr="2.5"] .page3-wrap .page3-info {
+[data-dpr="2.5"] .page3-wrap .data-info {
   font-size: 35px;
 }
-[data-dpr="2.75"] .page3-wrap .page3-info {
+[data-dpr="2.75"] .page3-wrap .data-info {
   font-size: 39px;
 }
-[data-dpr="3"] .page3-wrap .page3-info {
+[data-dpr="3"] .page3-wrap .data-info {
   font-size: 42px;
 }
-[data-dpr="4"] .page3-wrap .page3-info {
+[data-dpr="4"] .page3-wrap .data-info {
   font-size: 56px;
 }
-.page3-wrap .page3-info div {
+.page3-wrap .data-info div {
   margin-bottom: 0.53333333rem;
 }
 .page3-wrap .page3-text {
@@ -296,6 +291,7 @@ p {
   margin: auto;
 }
 .page4-wrap .page5-5 {
+  background: #0c80bc;
   background-image: url('../images/page5_5.png');
   width: 2.50666667rem;
   height: 0.61333333rem;
@@ -669,6 +665,15 @@ p {
 }
 .page5-wrap .android-down {
   background-image: url('../images/android_down.png');
+}
+.img-wrap {
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+}
+.img-wrap div {
+  margin: auto;
 }
 @keyframes arrow {
   0%,

@@ -30,24 +30,101 @@ Zepto(function() {
         }
     }
     auto.init();
-
+    
+    
     /*
-        全屏滚动
+        初始化数据
      * */
-    $('.wp-inner').fullpage({
-        change: function (e) {
-            // 移除动画属性
-            $('.page').eq(e.cur).find('.js-animate').each(function() {
-                $(this).removeClass($(this).data('animate')).hide();
+    var initData = {
+        init:function() {
+            this.detail();
+        },
+        //数据初始化
+        detail:function() {
+            var _this = this;
+            var id = location.search.split('=')[1];
+            $.ajax({
+                type:'get',
+                url:'http://lijingli.cn:8080/lijinli/service/invitation/'+id,
+                dataType:'json',
+                success:function( data ) {
+                    //var location = data.data.location;
+                    _this.baiduMap(  );
+
+                    console.log(data)
+                    
+                    //结婚对象名
+                    
+                    
+                    var html = info( data );
+                    var html2 = info2( data );
+                    
+                    $('.message').append( html );
+                    $('.data-info').append( html2 )
+
+                    var n_time = data.data.createTime.substr(0,11);
+                    var m_time = data.data.createTime.substr(11);
+                    
+                    $('.n-time').html( data.data.startTime );
+                    $('.m-time').html( data.data.createTime );
+                    $('.location').html( data.data.location );
+                    
+                    $('.page2-5').append('<div class="n-time">'+n_time+'</div>'+
+                                         '<div class="m-time">'+m_time+'</div>');
+                    $('.GPS').append('<a class="" href="http://api.map.baidu.com/geocoder?address=四川省成都市高新区香年广场&output=html&src=" ">开始导航</a>');
+                    
+                    //图片创建
+                    var imgArr = data.data.md5;
+                    imgArr.map(function( i ) {
+                    	var imgDom = '<div class="img-wrap page page3" >'+
+										'<div class=" js-animate animated" data-animate="fadeIn">'+
+											'<img src="http://lijingli.cn:4869/'+i+'" alt="" />'+
+										'</div>'+
+									'</div>'	
+						$(imgDom).insertAfter('.img-container');
+                    })
+                    
+                    /*
+				        全屏滚动
+				     * */
+				    $('.wp-inner').fullpage({
+				        change: function (e) {
+				            // 移除动画属性
+				            $('.page').eq(e.cur).find('.js-animate').each(function() {
+				                $(this).removeClass($(this).data('animate')).hide();
+				            });
+				        },
+				        afterChange: function (e) {
+				            // 添加动画属性
+				            $('.page').eq(e.cur).find('.js-animate').each(function () {
+				                $(this).addClass($(this).data('animate')).show();
+				            });
+				        }
+				    });
+                }	
             });
         },
-        afterChange: function (e) {
-            // 添加动画属性
-            $('.page').eq(e.cur).find('.js-animate').each(function () {
-                $(this).addClass($(this).data('animate')).show();
-            });
+        baiduMap:function() {
+            var map = new BMap.Map("map-container");          // 创建地图实例
+            var point = new BMap.Point(116.331398,39.897445);  // 创建点坐标
+            map.centerAndZoom(point, 17);                 // 初始化地图，设置中心点坐标和地图级别
+
+            // 创建地址解析器实例
+            var myGeo = new BMap.Geocoder();
+            // 将地址解析结果显示在地图上,并调整地图视野
+            myGeo.getPoint("四川省成都市高新区香年广场", function(point){
+                if (point) {
+                    map.centerAndZoom(point, 16);
+                    map.addOverlay(new BMap.Marker(point));
+                }else{
+                    alert("您的地址有误！");
+                }
+            }, "");
         }
-    });
+    }
+    initData.init();
+
+    
 
     /*
         textarea自增高
@@ -160,56 +237,6 @@ Zepto(function() {
     }
     accept.init();
 
-    /*
-        初始化数据
-     * */
-    var initData = {
-        init:function() {
-            this.detail();
-        },
-        detail:function() {
-            var _this = this;
-            var id = location.search.split('=')[1];
-            $.ajax({
-                type:'get',
-                url:'http://lijingli.cn:8080/lijinli/service/invitation/'+id,
-                dataType:'json',
-                success:function(data) {
-                    //var location = data.data.location;
-                    _this.baiduMap(  );
-
-                    console.log(data)
-                    var html = info( data );
-                    var html2 = info2( data );
-                    $('.message').append( html );
-                    $('.data-info').append( html2 )
-
-                    var n_time = data.data.createTime.substr(0,10);
-                    var m_time = data.data.createTime.substr(10);
-                    $('.page2-5').append('<div class="n-time">'+n_time+'</div>'+
-                                         '<div class="m-time">'+m_time+'</div>');
-                    $('.GPS').append('<a class="" href="http://api.map.baidu.com/geocoder?address=四川省成都市高新区香年广场&output=html&src=" ">开始导航</a>')
-                }
-            });
-        },
-        baiduMap:function(  ) {
-            var map = new BMap.Map("map-container");          // 创建地图实例
-            var point = new BMap.Point(116.331398,39.897445);  // 创建点坐标
-            map.centerAndZoom(point, 17);                 // 初始化地图，设置中心点坐标和地图级别
-
-            // 创建地址解析器实例
-            var myGeo = new BMap.Geocoder();
-            // 将地址解析结果显示在地图上,并调整地图视野
-            myGeo.getPoint("四川省成都市高新区香年广场", function(point){
-                if (point) {
-                    map.centerAndZoom(point, 16);
-                    map.addOverlay(new BMap.Marker(point));
-                }else{
-                    alert("您的地址有误！");
-                }
-            }, "");
-        }
-    }
-    initData.init();
+    
 
 });

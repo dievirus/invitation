@@ -221,34 +221,6 @@ p {
 .page2-wrap .message .mt-40 {
   margin-top: 0.53333333rem;
 }
-.page3-wrap {
-  height: 100%;
-  overflow: hidden;
-  width: 100%;
-  background: #d52e31;
-}
-.page3-wrap .page3-1 {
-  height: 8rem;
-}
-.page3-wrap .page3-2,
-.page3-wrap .page3-3 {
-  width: 50%;
-  height: 5.06666667rem;
-}
-.page3-wrap .page3-2 img,
-.page3-wrap .page3-3 img {
-  height: 5.06666667rem;
-}
-.page3-wrap .page3-4 {
-  height: 4.72rem;
-  margin-top: 5.06666667rem;
-}
-.page3-wrap .page3-2 {
-  float: left;
-}
-.page3-wrap .page3-3 {
-  float: right;
-}
 .page4-wrap {
   height: 100%;
   background: #d52e31;
@@ -294,10 +266,10 @@ p {
   background-size: contain;
 }
 .page4-wrap .map {
-  width: 8.4rem;
-  height: 5.06666667rem;
+  width: 7.73333333rem;
+  height: 4rem;
   margin: 0 auto;
-  margin-top: 1rem;
+  margin-top: 0.4rem;
 }
 .page4-wrap .map #map-container {
   width: 100%;
@@ -308,7 +280,7 @@ p {
 }
 .page4-wrap .GPS a {
   text-decoration: none;
-  margin-top: 0.53333333rem;
+  margin-top: 0.13333333rem;
   font-size: 42px;
   display: block;
 }
@@ -327,27 +299,28 @@ p {
 [data-dpr="4"] .page4-wrap .GPS a {
   font-size: 56px;
 }
-.page4-wrap .page4-info {
+.page4-wrap .data-info {
   margin-top: 0.26666667rem;
   font-size: 42px;
+  color: #fff;
   text-align: center;
 }
-[data-dpr="2"] .page4-wrap .page4-info {
+[data-dpr="2"] .page4-wrap .data-info {
   font-size: 28px;
 }
-[data-dpr="2.5"] .page4-wrap .page4-info {
+[data-dpr="2.5"] .page4-wrap .data-info {
   font-size: 35px;
 }
-[data-dpr="2.75"] .page4-wrap .page4-info {
+[data-dpr="2.75"] .page4-wrap .data-info {
   font-size: 39px;
 }
-[data-dpr="3"] .page4-wrap .page4-info {
+[data-dpr="3"] .page4-wrap .data-info {
   font-size: 42px;
 }
-[data-dpr="4"] .page4-wrap .page4-info {
+[data-dpr="4"] .page4-wrap .data-info {
   font-size: 56px;
 }
-.page4-wrap .page4-info div {
+.page4-wrap .data-info div {
   margin-bottom: 0.53333333rem;
 }
 .page4-wrap .page4-text {
@@ -830,6 +803,16 @@ p {
 }
 .page6-wrap .android-down {
   background-image: url('../images/android_down.png');
+}
+.img-wrap {
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+  background: #d52e31;
+  display: flex;
+}
+.img-wrap div {
+  margin: auto;
 }
 @keyframes arrow {
   0%,

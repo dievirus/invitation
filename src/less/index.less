@@ -22,7 +22,7 @@
     }
 }
 
-//---------------page2-wrap
+//---------------page2-wrap------------
 .page2-wrap {
     height:100%;
     background:#d52e31;
@@ -75,34 +75,7 @@
         }
     }
 }
-//-----------page3-wrap
-.page3-wrap {
-    height:100%;
-    overflow: hidden;
-    width:100%;
-    background:#d52e31;
-    .page3-1 {
-        .px2rem(height,600);
-    }
-    .page3-2,.page3-3 {
-        width:50%;
-        .px2rem(height,380);
-        img {
-            .px2rem(height,380);
-        }
-    }
-    .page3-4 {
-        .px2rem(height,354);
-        .px2rem(margin-top,380);
-        
-    }
-    .page3-2 {
-        float:left;
-    }
-    .page3-3 {
-        float:right;
-    }
-}
+
 //-----------page4-wrap
 .page4-wrap {
     height:100%;
@@ -145,10 +118,10 @@
         background-size: contain;
     }
     .map {
-        .px2rem(width,630);
-        .px2rem(height,380);
+        .px2rem(width,580);
+        .px2rem(height,300);
         margin:0 auto;
-        .px2rem(margin-top,75);
+        .px2rem(margin-top,30);
         #map-container {
             width:100%;
             height:100%;
@@ -158,14 +131,15 @@
         text-align: center;
         a {
             text-decoration: none;
-            .px2rem(margin-top,40);
+            .px2rem(margin-top,10);
             .px2px(font-size,28);
             display:block;
         }
     }
-    .page4-info {
+    .data-info {
         .px2rem(margin-top,20);
         .px2px(font-size,28);
+        color:#fff;
         text-align: center;
         div {
             .px2rem(margin-bottom,40);
@@ -459,6 +433,17 @@
     }
     .android-down {
         background-image: url('../images/android_down.png');
+    }
+}
+//-----------img-wrap
+.img-wrap {
+    height:100%;
+    overflow: hidden;
+    width:100%;
+    background:#d52e31;
+    display:flex;
+    div {
+        margin:auto;
     }
 }
 //************************动画*****************************
