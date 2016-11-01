@@ -31,7 +31,7 @@
                     </div>
 
                     <div class="page1-5">
-                        <div class="marrier js-animate animated" data-animate="fadeIn15s">徐之恒 & 李蕾  </div>
+                        <div class="marrier js-animate animated" data-animate="fadeIn15s"> </div>
                         <div class="n-time js-animate animated color-666" data-animate="bounceInRight"></div>
                         <div class="m-time js-animate animated color-666" data-animate="bounceInLeft"></div>
                     </div>
@@ -106,8 +106,8 @@
                 <div class="page5-wrap page page5">
                     <div class="logo js-animate animated" data-animate="fadeIn"></div>
                     <div class="company js-animate animated" data-animate="flip">礼金理科技有限公司</div>
-                    <div class="iphone-down js-animate animated" data-animate="flipInX"></div>
-                    <div class="android-down js-animate animated" data-animate="flipInY"></div>
+                    <div class="iphone-down js-animate animated down" data-animate="flipInX" id="ios-applink"></div>
+				<div class="android-down js-animate animated down" data-animate="flipInY" id="android-applink"></div>
                 </div>
             </div>
         </div>
@@ -117,6 +117,29 @@
         <audio controls="controls" autoplay="autoplay" id="bgMusic">
             <source src="http://odpc0769s.bkt.clouddn.com/invitationbg.mp3" type="audio/mpeg" >
         </audio>
-
+		<script>
+			/*
+			 	自适应
+			 * */
+			var auto = {
+				init:function() {
+					var dpr = window.devicePixelRatio || 1;
+					var docEl = document.documentElement;
+					
+					//设置data-drp属性
+					docEl.setAttribute('data-dpr', dpr);
+					//缩放比例
+					var scale = 1 / dpr;
+					//设置meta 压缩界面 模拟设备的高分辨率
+					document.querySelector('meta[name="viewport"]').setAttribute('content', 'initial-scale=' + scale + ',maximum-scale=' + scale + ', minimum-scale=' + scale + ',user-scalable=no');
+				
+					//设置html中font-size大小
+					docEl.style.fontSize = docEl.clientWidth / 10 + 'px';
+				}
+			}
+			
+			auto.init();
+			
+		</script>
     </body>
 </html>

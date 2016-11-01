@@ -10,6 +10,75 @@ var info = require('../../tmpl/info.tpl');
 var info2 = require('../../tmpl/info2.tpl');
 
 Zepto(function() {
+	
+	/*
+	 	app download
+	 * */
+	var androidIs = false,
+		iosIs = false;
+	//  ios
+	var ios = {
+	  	Url: "com.LiJinLi",
+		downloadUrl: "https://itunes.apple.com/cn/app/li-jin-li/id1133859479?mt=8"
+	};
+	//android
+	var android = {
+		Url: "com.zjy.lijinli",
+		downloadUrl: "http://a.app.qq.com/o/simple.jsp?pkgname=com.zjy.lijinli"
+	};
+
+	var appInfoFn = function(){
+	    return{
+	        Url: androidIs ? android.Url : ios.Url,
+	        downloadUrl: androidIs ? android.downloadUrl : ios.downloadUrl
+	    };
+	};
+
+
+	var app = {
+	    init:function(){ 
+	    	app.appInfo = appInfoFn();	
+          	document.getElementById("ios-applink").onclick = app.applink( app.appInfo.downloadUrl );
+          	document.getElementById("android-applink").onclick = app.applink( app.appInfo.downloadUrl );
+	    },
+	    applink:function( fail ){
+	        return function(){
+	            var clickedAt = +new Date;
+	            // 微信浏览器不能直接打开
+	            var ua = window.navigator.userAgent.toLowerCase(),
+					weixinFlag = ua.match(/MicroMessenger/i) == 'micromessenger' ? true : false;
+				if( weixinFlag ){
+					//alert('请用默认浏览器打开！')
+					 window.location = android.downloadUrl ;
+					 return;
+				}	
+				// During tests on 3g/3gs this timeout fires immediately if less than 500ms.
+	            window.location = app.appInfo.downloadUrl ;
+	            if(window.location !== app.appInfo.Url){
+
+	              setTimeout(function(){
+	                    // To avoid failing on return to MobileSafari, ensure freshness!
+	                    if (+new Date - clickedAt < 2000){
+	                       window.location = fail;
+	                    }
+	              }, 500);
+	            }
+	        };
+	    }
+	};
+	/*
+	 	设备判断
+	 * */
+	var u = navigator.userAgent  ;
+	if (u.match(/(iPhone|iPod|iPad);?/i) || u.indexOf('Android') > -1  ) {
+
+	    if( u.indexOf('Android') > -1){
+	       androidIs = true;
+    	}
+    	app.init();
+  	}
+	
+	
     /*
         自适应
      * */
@@ -29,7 +98,7 @@ Zepto(function() {
             docEl.style.fontSize = docEl.clientWidth / 10 + 'px';
         }
     }
-    auto.init();
+    //auto.init();
     
     
     /*
@@ -65,6 +134,7 @@ Zepto(function() {
                     var n_time = data.data.createTime.substr(0,11);
                     var m_time = data.data.createTime.substr(11);
                     
+                    $('.marrier').html( data.data.name )
                     $('.n-time').html( data.data.startTime );
                     $('.m-time').html( data.data.createTime );
                     $('.location').html( data.data.location );

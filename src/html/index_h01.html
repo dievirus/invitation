@@ -44,7 +44,7 @@
                     </div>
 
                     <div class="page1-5">
-                        <div class="marrier js-animate animated" data-animate="fadeIn15s">徐之恒 & 李蕾  </div>
+                        <div class="marrier js-animate animated" data-animate="fadeIn15s"></div>
                         <div class="n-time js-animate animated color-666" data-animate="bounceInRight"></div>
                         <div class="m-time js-animate animated color-666" data-animate="bounceInLeft"></div>
                     </div>
@@ -54,17 +54,7 @@
                     <div class="page1-7 js-animate animated color-666 location" data-animate="fadeIn25s"></div>
                 </div>
 
-                <div class="page2-wrap page page2">
-                    <div class="page2-1 js-animate animated" data-animate="pulse">
-                        <img src="images/h01_body.png" alt=""/>
-                    </div>
-                    <div class="page2-2 js-animate animated" data-animate="stretchLeft">
-                        <img src="images/L01_page2_2.png" alt="" />
-                    </div>
-                    <div class="page2-3 js-animate animated" data-animate="zoomInDown">
-                        <img src="images/test1.png" alt="" class="img-100"/>
-                    </div>
-                </div>
+                
 
                 <div class="page3-wrap page page3">
                     <div class="page3-5 js-animate animated" data-animate="rubberBand"></div>
@@ -75,13 +65,8 @@
                     	<a class="" href="http://api.map.baidu.com/geocoder?address=四川省成都市高新区香年广场&output=html&src=" ">开始导航</a>
                     </div>
                     <div class="data-info">
-                        <div class="page4-date js-animate animated" data-animate="rotateInDownRight">时间：2016年9月15日（农历八月十五）</div>
-                        <div class="page4-address js-animate animated" data-animate="rotateInDownLeft">地点：成都市武侯区皮尔菲特大酒店</div>
-                        <div class="page4-time js-animate animated" data-animate="rotateInDownRight">开席时间：中午12:00</div>
-                        <div class="page4-times js-animate animated" data-animate="rotateInDownLeft">酒席场数：3场</div>
-                        <div class="page4-times js-animate animated" data-animate="rotateInDownRight">邀请人：李大伟、郑萌萌</div>
+                        
                     </div>
-                    <!--<div class="page4-text color-1 js-animate animated" data-animate="fadeIn">期待您的光临</div>-->
                 </div>
 
                 <div class="page4-wrap page page4">
@@ -119,8 +104,8 @@
                 <div class="page5-wrap page page5">
                     <div class="logo js-animate animated" data-animate="fadeIn"></div>
                     <div class="company js-animate animated" data-animate="flip">礼金理科技有限公司</div>
-                    <div class="iphone-down js-animate animated" data-animate="flipInX"></div>
-                    <div class="android-down js-animate animated" data-animate="flipInY"></div>
+                    <div class="iphone-down js-animate animated down" data-animate="flipInX" id="ios-applink"></div>
+				<div class="android-down js-animate animated down" data-animate="flipInY" id="android-applink"></div>
                 </div>
             </div>
         </div>
@@ -130,6 +115,29 @@
         <audio controls="controls" autoplay="autoplay" id="bgMusic">
             <source src="http://odpc0769s.bkt.clouddn.com/invitationbg.mp3" type="audio/mpeg" >
         </audio>
-
+		<script>
+			/*
+			 	自适应
+			 * */
+			var auto = {
+				init:function() {
+					var dpr = window.devicePixelRatio || 1;
+					var docEl = document.documentElement;
+					
+					//设置data-drp属性
+					docEl.setAttribute('data-dpr', dpr);
+					//缩放比例
+					var scale = 1 / dpr;
+					//设置meta 压缩界面 模拟设备的高分辨率
+					document.querySelector('meta[name="viewport"]').setAttribute('content', 'initial-scale=' + scale + ',maximum-scale=' + scale + ', minimum-scale=' + scale + ',user-scalable=no');
+				
+					//设置html中font-size大小
+					docEl.style.fontSize = docEl.clientWidth / 10 + 'px';
+				}
+			}
+			
+			auto.init();
+			
+		</script>
     </body>
 </html>
